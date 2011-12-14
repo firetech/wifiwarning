@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2011 Joakim Andersson
+ * 
+ * This file is part of WiFi Warning, an Android application to notify users
+ * of Android based devices when the WiFi is enabled but not connected.
+ * 
+ * WiFi Warning is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * WiFi Warning is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orderingFromXml="true" android:title="@string/app_name">
+	<ListPreference android:title="@string/intent_action_title"
+			android:summary="@string/intent_action_summary" android:entryValues="@array/action_values"
+			android:dialogTitle="@string/intent_action_title" android:key="@string/key_action"
+			android:entries="@array/actions" android:negativeButtonText="@android:string/cancel"
+			android:defaultValue="@string/action_default" />
+	<CheckBoxPreference android:title="@string/clearable_title"
+			android:summaryOn="@string/clearable_summary_on" android:summaryOff="@string/clearable_summary_off"
+			android:key="@string/key_clearable" android:defaultValue="false" />
+</PreferenceScreen>

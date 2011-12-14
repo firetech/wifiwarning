@@ -5,12 +5,12 @@
  * This file is part of WiFi Warning, an Android application to notify users
  * of Android based devices when the WiFi is enabled but not connected.
  * 
- * HeartbeatToggle is free software; you can redistribute it and/or modify
+ * WiFi Warning is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  * 
- * HeartbeatToggle is distributed in the hope that it will be useful,
+ * WiFi Warning is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -22,9 +22,18 @@
 <resources>
     <string name="app_name">WiFi Warning</string>
     
+    <string name="notification_ticker">WiFi disconnected</string>
     <string name="notification_title">WiFi is on, but not connected</string>
-    <string name="notification_text">Select to turn WiFi off</string>
+    <string name="notification_text_clear">Select to remove this warning</string>
+    <string name="notification_text_disable">Select to disable WiFi</string>
+    <string name="notification_text_settings">Select to open WiFi settings</string>
     
     <string name="set_off">WiFi disabled</string>
     <string name="set_failed">Failed to turn WiFi off!</string>
+    
+    <string name="intent_action_title">Action</string>
+    <string name="intent_action_summary">What to do when you select the warning notification</string>
+    <string name="clearable_title">Clearable</string>
+    <string name="clearable_summary_on">Warning can be removed manually</string>
+    <string name="clearable_summary_off">Warning will only be removed when WiFi is off or connected</string>
 </resources>

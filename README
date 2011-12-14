@@ -2,8 +2,13 @@ This is WiFi Warning.
 WiFi Warning is an Android application that notifies users of Android based
 devices when the WiFi is enabled but not connected.
 
+What the app should do when you select the warning notification is configurable,
+as is whether the notification should stay when you clear your notifications.
+
 Requires Android 3.0 or higher.
 
-This project is heavily inspired by WifiStatus by Andrew Schwimmer (available
-on the Android Market), and was developed only because that application stopped
-working in Android 4.0 (Ice Cream Sandwich).
+This project is heavily inspired by Wifi Status by Andrew Schwimmer (available
+on the Android Market,
+https://market.android.com/details?id=com.schwimmer.android.wifistatus), and was
+developed only because that application stopped working in Android 4.0 (Ice
+Cream Sandwich).
