@@ -5,7 +5,7 @@ devices when the WiFi is enabled but not connected.
 What the app should do when you select the warning notification is configurable,
 as is whether the notification should stay when you clear your notifications.
 
-Requires Android 3.0 or higher.
+Requires Android 2.3 or higher.
 
 This project is heavily inspired by Wifi Status by Andrew Schwimmer (available
 on the Android Market,

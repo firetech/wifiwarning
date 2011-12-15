@@ -27,6 +27,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 
@@ -68,38 +69,45 @@ public class NotificationControl extends BroadcastReceiver {
 	private static void buildNotification(Context context) {
 		if (notification == null) {
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-			Notification.Builder b = new Notification.Builder(context);
-			b.setOnlyAlertOnce(true);
-			b.setOngoing(!prefs.getBoolean(context.getString(R.string.key_clearable), false));
-			b.setSmallIcon(R.drawable.notification_icon);
-			b.setTicker(context.getString(R.string.notification_ticker));
-			b.setContentTitle(context.getString(R.string.notification_title));
-			b.setLights(0, 0, 0);
-			b.setVibrate(null);
-			b.setSound(null);
-			
+			notification = new Notification(R.drawable.notification_icon, context.getString(R.string.notification_ticker), 0);
+			notification.flags |= Notification.FLAG_ONLY_ALERT_ONCE;
+			if (!prefs.getBoolean(context.getString(R.string.key_clearable), false)) {
+				if (Build.VERSION.SDK_INT >= 11) {
+					notification.flags |= Notification.FLAG_ONGOING_EVENT;
+				} else {
+					notification.flags |= Notification.FLAG_NO_CLEAR;
+				}
+			}
+			notification.sound = null;
+			notification.vibrate = null;
+			notification.flags &= ~Notification.FLAG_SHOW_LIGHTS;
+
+			PendingIntent intent = null;
+			String text = "";
 			String action = prefs.getString(context.getString(R.string.key_action),
 											context.getString(R.string.action_default));
 			if (!action.equals("0")) {
-				PendingIntent i;
-				int text = 0;
+				int textId;
 				if (action.equals("clear")) {
-					i = PendingIntent.getBroadcast(context, 0, new Intent(CLEAR_INTENT), 0);
-					text = R.string.notification_text_clear;
+					intent = PendingIntent.getBroadcast(context, 0, new Intent(CLEAR_INTENT), 0);
+					textId = R.string.notification_text_clear;
 				} else if (action.equals("disable")) {
-					i = PendingIntent.getBroadcast(context, 0, new Intent(StatusListener.DISABLE_INTENT), 0);
-					text = R.string.notification_text_disable;
+					intent = PendingIntent.getBroadcast(context, 0, new Intent(StatusListener.DISABLE_INTENT), 0);
+					textId = R.string.notification_text_disable;
 				} else if (action.equals("settings")) {
-					i = PendingIntent.getActivity(context, 0, new Intent(Settings.ACTION_WIFI_SETTINGS), 0);
-					text = R.string.notification_text_settings;
+					intent = PendingIntent.getActivity(context, 0, new Intent(Settings.ACTION_WIFI_SETTINGS), Intent.FLAG_ACTIVITY_NEW_TASK);
+					textId = R.string.notification_text_settings;
 				} else {
 					throw new IllegalArgumentException("Unknown action setting!");
 				}
-				b.setContentIntent(i);
-				b.setContentText(context.getString(text));
+				text = context.getString(textId);
 			}
 			
-			notification = b.getNotification();
+			if (intent == null) {
+				intent = PendingIntent.getBroadcast(context, 0, new Intent(), 0);
+			}
+
+			notification.setLatestEventInfo(context, context.getString(R.string.notification_title), text, intent);
 		}
 	}
 	
