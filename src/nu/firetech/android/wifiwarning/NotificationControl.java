@@ -27,6 +27,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -78,9 +79,21 @@ public class NotificationControl extends BroadcastReceiver {
 					notification.flags |= Notification.FLAG_NO_CLEAR;
 				}
 			}
-			notification.sound = null;
-			notification.vibrate = null;
-			notification.flags &= ~Notification.FLAG_SHOW_LIGHTS;
+			String uri = prefs.getString(context.getString(R.string.key_notify_sound), null);
+			notification.sound = (uri == null ? null : Uri.parse(uri));
+			if (prefs.getBoolean(context.getString(R.string.key_notify_vibrate), false)) {
+				notification.defaults |= Notification.DEFAULT_VIBRATE;
+			} else {
+				notification.vibrate = null;
+			}
+			if (prefs.getBoolean(context.getString(R.string.key_notify_light), false)) {
+				notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+				notification.ledARGB = 0xffff8000;
+				notification.ledOnMS = 1000;
+				notification.ledOffMS = 2000;
+			} else {
+				notification.flags &= ~Notification.FLAG_SHOW_LIGHTS;
+			}
 
 			PendingIntent intent = null;
 			String text = "";

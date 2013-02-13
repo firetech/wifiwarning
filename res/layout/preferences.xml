@@ -28,4 +28,15 @@
 	<CheckBoxPreference android:title="@string/clearable_title"
 			android:summaryOn="@string/clearable_summary_on" android:summaryOff="@string/clearable_summary_off"
 			android:key="@string/key_clearable" android:defaultValue="false" />
+	
+	<PreferenceScreen android:title="@string/notify_settings_title"
+		android:summary="@string/notify_settings_summary">
+		<RingtonePreference android:title="@string/notify_sound_title"
+			android:key="@string/key_notify_sound" android:ringtoneType="notification"
+			android:showDefault="true" android:showSilent="true" />
+		<CheckBoxPreference android:title="@string/notify_vibrate_title"
+			android:key="@string/key_notify_vibrate" android:defaultValue="false" />
+		<CheckBoxPreference android:title="@string/notify_light_title"
+			android:key="@string/key_notify_light" android:defaultValue="false" />
+	</PreferenceScreen>
 </PreferenceScreen>
