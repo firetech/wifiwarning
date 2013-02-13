@@ -36,6 +36,7 @@ import android.util.Log;
 public class ConfigActivity extends PreferenceActivity {
 	private static final String TAG = "WifiWarning.ConfigActivity";
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{

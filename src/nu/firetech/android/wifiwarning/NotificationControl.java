@@ -67,6 +67,7 @@ public class NotificationControl extends BroadcastReceiver {
 		nMgr.cancel(NOTIFICATION_ID);
 	}
 
+	@SuppressWarnings("deprecation")
 	private static void buildNotification(Context context) {
 		if (notification == null) {
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
