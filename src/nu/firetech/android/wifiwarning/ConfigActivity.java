@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Joakim Andersson
+ * Copyright (C) 2013 Joakim Andersson
  * 
  * This file is part of WiFi Warning, an Android application to notify users
  * of Android based devices when the WiFi is enabled but not connected.
