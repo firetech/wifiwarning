@@ -21,7 +21,7 @@
 
 <resources>
     <string name="key_action">intentAction</string>
-    <string name="action_default">disable</string>
+    <string name="action_default">settings</string>
     <string name="key_clearable">ongoing</string>
     <string name="key_notify_sound">sound</string>
     <string name="key_notify_vibrate">vibrate</string>
