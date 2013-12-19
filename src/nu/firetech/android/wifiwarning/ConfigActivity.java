@@ -47,8 +47,7 @@ public class ConfigActivity extends PreferenceActivity {
 			fixNotification();
 		}
 		
-		addPreferencesFromResource(R.layout.preferences);
-		
+		addPreferencesFromResource(R.xml.preferences);
 
 		final ListPreference actionPref = (ListPreference)findPreference(getString(R.string.key_action));
 		final CheckBoxPreference clearablePref = (CheckBoxPreference)findPreference(getString(R.string.key_clearable));
