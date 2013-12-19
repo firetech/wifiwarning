@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- * Copyright (C) 2011 Joakim Andersson
+ * Copyright (C) 2013 Joakim Andersson
  * 
  * This file is part of WiFi Warning, an Android application to notify users
  * of Android based devices when the WiFi is enabled but not connected.
@@ -21,10 +21,10 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nu.firetech.android.wifiwarning"
-    android:versionCode="3"
-    android:versionName="1.5" >
+    android:versionCode="4"
+    android:versionName="1.5.1" >
 
-    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="17" />
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
