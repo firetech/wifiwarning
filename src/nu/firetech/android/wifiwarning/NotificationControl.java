@@ -71,7 +71,9 @@ public class NotificationControl extends BroadcastReceiver {
 	private static void buildNotification(Context context) {
 		if (notification == null) {
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-			notification = new Notification(R.drawable.notification_icon, context.getString(R.string.notification_ticker), 0);
+			notification = new Notification(R.drawable.notification_icon,
+											context.getString(R.string.notification_ticker),
+											System.currentTimeMillis());
 			notification.flags |= Notification.FLAG_ONLY_ALERT_ONCE;
 			if (!prefs.getBoolean(context.getString(R.string.key_clearable), false)) {
 				if (Build.VERSION.SDK_INT >= 11) {
