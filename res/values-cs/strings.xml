@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2013 Joakim Andersson
+ * 
+ * This file is part of WiFi Warning, an Android application to notify users
+ * of Android based devices when the WiFi is enabled but not connected.
+ * 
+ * WiFi Warning is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * WiFi Warning is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+    <string name="app_name">WiFi Warning</string>
+    
+    <string name="notification_ticker">WiFi odpojeno</string>
+    <string name="notification_title">WiFi zapnuto, ale nepřipojeno</string>
+    <string name="notification_text_clear">Odstranit toto varování</string>
+    <string name="notification_text_disable">Vypnout WiFi</string>
+    <string name="notification_text_settings">Otevřít nastavení WiFi</string>
+    
+    <string name="set_off">WiFi vypnuto</string>
+    <string name="set_failed">Selhalo vypnutí WiFi!</string>
+    
+    <string name="intent_action_title">Akce</string>
+    <string name="intent_action_summary">Co dělat při označení varovného upozornění</string>
+    <string name="clearable_title">Odstranitelné</string>
+    <string name="clearable_summary_on">Varování může být odstraněno ručně</string>
+    <string name="clearable_summary_off">Varování může být odstraněno pouze při vypnuté nebo připojené WiFi</string>
+    
+    <string name="notify_settings_title">Nastavení upozornění</string>
+    <string name="notify_settings_summary">Vybrat co dělat při ztrátě WiFi připojení</string>
+    <string name="notify_sound_title">Tón upozornění</string>
+    <string name="notify_vibrate_title">Vibrovat</string>
+    <string name="notify_light_title">LED upozornění</string>
+</resources>
